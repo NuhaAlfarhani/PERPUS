@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 //panggil model Petugas
 use App\Models\PetugasModel;
@@ -21,14 +22,14 @@ class PetugasController extends Controller
     //method untuk tambah data petugas
     public function petugastambah(Request $request)
     {
-        $this->validate($request, [
+        Validator::validate($request->all(), [
             'nama_petugas' => 'required',
             'hp_petugas' => 'required'
         ]);
 
         PetugasModel::create([
             'nama_petugas' => $request->nama_petugas,
-            'hp_petugas' => $request->hp
+            'hp_petugas' => $request->hp_petugas
         ]);
 
         return redirect('/petugas');
@@ -46,14 +47,14 @@ class PetugasController extends Controller
      //method untuk edit data petugas
     public function petugasedit($id_petugas, Request $request)
     {
-        $this->validate($request, [
+        Validator::validate($request->all(), [
             'nama_petugas' => 'required',
             'hp_petugas' => 'required'
         ]);
 
         $id_petugas = PetugasModel::find($id_petugas);
         $id_petugas->nama_petugas      = $request->nama_petugas;
-        $id_petugas->hp   = $request->hp_petugas;
+        $id_petugas->hp_petugas   = $request->hp_petugas;
 
         $id_petugas->save();
 

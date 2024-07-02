@@ -10,23 +10,23 @@ class PinjamModel extends Model
     use HasFactory;
     protected $table        = "peminjaman";
     protected $primaryKey   = "id_pinjam";
-    protected $fillable     = ['id_pinjam','id_petugas','id_anggota','id_buku'];
+    protected $fillable     = ['id_pinjam','nama_petugas','nama_anggota','judul'];
 
     //relasi ke petugas
     public function petugas()
     {
-        return $this->belongsTo('App\Models\PetugasModel', 'id_petugas');
+        return $this->belongsTo('App\Models\PetugasModel', 'nama_petugas');
     }
 
-    //relasi ke siswa
+    //relasi ke anggota
     public function anggota()
     {
-        return $this->belongsTo('App\Models\AnggotaModel', 'id_anggota');
+        return $this->belongsTo('App\Models\AnggotaModel', 'nama_anggota');
     }
 
     //relasi ke buku
     public function buku()
     {
-        return $this->belongsTo('App\Models\BukuModel', 'id_buku');
+        return $this->belongsTo('App\Models\BukuModel', 'judul');
     }
 }

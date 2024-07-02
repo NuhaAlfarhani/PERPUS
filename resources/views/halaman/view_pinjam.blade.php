@@ -145,9 +145,9 @@
                     <form name="formpinjamtambah" id="formpinjamtambah" action="/pinjam/tambah " method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
-                            <label for="id_petugas" class="col-sm-4 col-form-label">Nama Petugas</label>
+                            <label for="nama_petugas" class="col-sm-4 col-form-label">Nama Petugas</label>
                             <div class="col-sm-8">
-                                <select type="text" class="form-control" id="id_petugas" name="id_petugas" placeholder="Pilih Nama Petugas">
+                                <select type="text" class="form-control" id="nama_petugas" name="nama_petugas" placeholder="Pilih Nama Petugas">
                                     <option></option>
                                     @foreach($petugas as $pt)
                                         <option value="{{ $pt->id_petugas }}">{{ $pt->nama_petugas }}</option>
@@ -158,9 +158,9 @@
 
                         <p>
                         <div class="form-group row">
-                            <label for="id_anggota" class="col-sm-4 col-form-label">Nama Anggota</label>
+                            <label for="nama_anggota" class="col-sm-4 col-form-label">Nama Anggota</label>
                             <div class="col-sm-8">
-                                <select type="text" class="form-control" id="id_anggota" name="id_anggota" placeholder="Pilih Nama Anggota">
+                                <select type="text" class="form-control" id="nama_anggota" name="nama_anggota" placeholder="Pilih Nama Anggota">
                                     <option></option>
                                     @foreach($anggota as $a)
                                         <option value="{{ $a->id_anggota }}">{{ $a->nama_anggota }}</option>
@@ -171,9 +171,9 @@
 
                         <p>
                         <div class="form-group row">
-                            <label for="id_buku" class="col-sm-4 col-form-label">Judul Buku</label>
+                            <label for="judul" class="col-sm-4 col-form-label">Judul Buku</label>
                             <div class="col-sm-8">
-                                <select type="text" class="form-control" id="id_buku" name="id_buku" placeholder="Pilih Judul Buku">
+                                <select type="text" class="form-control" id="judul" name="judul" placeholder="Pilih Judul Buku">
                                     <option></option>
                                     @foreach($buku as $bk)
                                         <option value="{{ $bk->id_buku }}">{{ $bk->judul }}</option>

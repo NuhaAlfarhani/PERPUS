@@ -109,9 +109,9 @@
 
                         <p>
                         <div class="form-group row">
-                            <label for="hp" class="col-sm-4 col-form-label">HP</label>
+                            <label for="hp_petugas" class="col-sm-4 col-form-label">HP</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="hp" name="hp" placeholder="Masukan HP">
+                                <input type="text" class="form-control" id="hp_petugas" name="hp_petugas" placeholder="Masukan HP">
                             </div>
                         </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 //panggil model BukuModel
 use App\Models\AnggotaModel;
@@ -21,7 +22,7 @@ class AnggotaController extends Controller
     //method untuk tambah data anggota
     public function anggotatambah(Request $request)
     {
-        $this->validate($request, [
+        Validator::validate($request->all(), [
             'nik' => 'required',
             'nama_anggota' => 'required',
             'alamat' => 'required',
@@ -50,7 +51,7 @@ class AnggotaController extends Controller
      //method untuk edit data anggota
     public function anggotaedit($id_anggota, Request $request)
     {
-        $this->validate($request, [
+        Validator::validate($request->all(), [
             'nik' => 'required',
             'nama_anggota' => 'required',
             'alamat' => 'required',

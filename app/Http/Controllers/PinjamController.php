@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\BukuModel;
-// use App\Models\PetugasModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 //memanggil model PinjamModel
 use App\Models\PinjamModel;
@@ -35,20 +34,21 @@ class PinjamController extends Controller
 
     //method untuk tambah data peminjaman
     public function pinjamtambah(Request $request)
-    {
-        $this->validate($request, [
-            'id_petugas' => 'required',
-            'id_anggota' => 'required',
-            'id_buku' => 'required'
-        ]);
+{
+    Validator::validate($request->all(), [
+        'nama_petugas' => 'required',
+        'nama_anggota' => 'required',
+        'judul' => 'required'
+    ]);
 
-        PinjamModel::create([
-            'id_petugas' => $request->id_petugas,
-            'id_anggota' => $request->id_anggota,
-            'id_buku' => $request->id_buku
-        ]);
-        return redirect('/pinjam');
-    }
+    PinjamModel::create([
+        'nama_petugas' => $request->nama_petugas,
+        'nama_anggota' => $request->nama_anggota,
+        'judul' => $request->judul
+    ]);
+
+    return redirect('/pinjam');
+}
 
     //method untuk hapus data peminjaman
     public function pinjamhapus($id_pinjam)
@@ -62,16 +62,16 @@ class PinjamController extends Controller
     //method untuk edit data peminjaman
     public function pinjamedit($id_pinjam, Request $request)
     {
-        $this->validate($request, [
-            'id_petugas' => 'required',
-            'id_anggota' => 'required',
-            'id_buku' => 'required'
+        Validator::validate($request->all(), [
+            'nama_petugas' => 'required',
+            'nama_anggota' => 'required',
+            'judul' => 'required'
         ]);
 
         $id_pinjam = PinjamModel::find($id_pinjam);
-        $id_pinjam->id_petugas    = $request->id_petugas;
-        $id_pinjam->id_anggota      = $request->id_anggota;
-        $id_pinjam->id_buku      = $request->id_buku;
+        $id_pinjam->nama_petugas    = $request->nama_petugas;
+        $id_pinjam->nama_anggota      = $request->nama_anggota;
+        $id_pinjam->judul      = $request->judul;
 
         $id_pinjam->save();
 
