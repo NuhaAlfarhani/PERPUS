@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('judul', 50);
             $table->string('pengarang', 50);
             $table->string('genre', 50);
+            $table->timestamps();
         });
     }
 

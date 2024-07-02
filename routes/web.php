@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    return view('halaman\view_home');
 });
 
 //Route untuk Data Buku
@@ -15,10 +15,10 @@ Route :: get('/buku/hapus/(id_buku)','BukuController@bukuhapus');
 Route :: put('/buku/edit(id_buku)','BukuController@bukuedit');
 
 //Route untuk Data Buku
-Route :: get('/home',function(){return view('halaman\view_home');});
-Route :: post('/buku/tambah','BukuController@bukutambah');
-Route :: get('/buku/hapus/(id_buku)','BukuController@bukuhapus');
-Route :: put('/buku/edit(id_buku)','BukuController@bukuedit');
+// Route :: get('/home',function(){return view('');});
+// Route :: post('/buku/tambah','BukuController@bukutambah');
+// Route :: get('/buku/hapus/(id_buku)','BukuController@bukuhapus');
+// Route :: put('/buku/edit(id_buku)','BukuController@bukuedit');
 
 //Route untuk Data Anggota
 Route :: get('/anggota','App\Http\Controllers\AnggotaController@anggotatampil');

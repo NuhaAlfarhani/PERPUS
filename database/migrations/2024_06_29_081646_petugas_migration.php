@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_petugas')->primary();
             $table->string('nama_petugas', 50);
             $table->string('hp_petugas', 50);
+            $table->timestamps();
         });
     }
 

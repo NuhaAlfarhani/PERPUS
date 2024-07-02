@@ -6,7 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Perpustakaan Kota Semarang | @yield('title')</title>
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/laravel/laravel/assets/css/bootstrap.css">
+        <link href="/css/app.css" rel="stylesheet">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
         <script type="text/javascript" src="{{ asset('assets') }}/js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="{{ asset('assets') }}/js/bootstrap.js"></script> 

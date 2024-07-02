@@ -13,7 +13,6 @@
         <thead>
             <tr>
                 <td align="center">No</td>
-                <td align="center">ID Buku</td>
                 <td align="center">Kode Buku</td>
                 <td align="center">Judul Buku</td>
                 <td align="center">Pengarang</td>
@@ -26,7 +25,6 @@
             @foreach ($buku as $index=>$bk)
                 <tr>
                     <td align="center" scope="row">{{ $index + $buku->firstItem() }}</td>
-                    <td>{{$bk->id_buku}}</td>
                     <td>{{$bk->kode_buku}}</td>
                     <td>{{$bk->judul}}</td>
                     <td>{{$bk->pengarang}}</td>

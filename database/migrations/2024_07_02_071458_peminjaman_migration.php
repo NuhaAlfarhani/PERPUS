@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id('id_peminjaman')->primary();
-            $table->foreignId('id_anggota')->constrained('anggota');
-            $table->foreignId('kode_buku')->constrained('buku');
-            $table->foreignId('id_petugas')->constrained('petugas');
+            $table->string('nama_anggota')->references('nama_anggota')->on('anggota');
+            $table->string('judul')->references('judul')->on('buku');
+            $table->string('nama_petugas')->references('nama_petugas')->on('petugas');
+            $table->timestamps();
         });
     }
 

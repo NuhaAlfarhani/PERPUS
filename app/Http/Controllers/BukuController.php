@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 //panggil model BukuModel
 use App\Models\BukuModel;
@@ -21,13 +22,13 @@ class BukuController extends Controller
     //method untuk tambah data buku
     public function bukutambah(Request $request)
     {
-        $this->validate($request, [
+        Validator::validate($request->all(), [
             'kode_buku' => 'required',
             'judul' => 'required',
             'pengarang' => 'required',
             'genre' => 'required'
         ]);
-
+        
         BukuModel::create([
             'kode_buku' => $request->kode_buku,
             'judul' => $request->judul,
@@ -50,7 +51,7 @@ class BukuController extends Controller
     //method untuk edit data buku
     public function bukuedit($id_buku, Request $request)
     {
-        $this->validate($request, [
+        Validator::validate($request->all(), [
             'kode_buku' => 'required',
             'judul' => 'required',
             'pengarang' => 'required',

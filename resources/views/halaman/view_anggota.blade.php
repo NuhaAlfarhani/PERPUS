@@ -13,7 +13,7 @@
         <thead>
             <tr>
                 <td align="center">No</td>
-                <td align="center">ID_Anggota</td>
+                <td align="center">ID Anggota</td>
                 <td align="center">NIK</td>
                 <td align="center">Nama Anggota</td>
                 <td align="center">alamat</td>
